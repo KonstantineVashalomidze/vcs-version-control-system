@@ -1,11 +1,17 @@
 package command_line_interface;
 
+import repository.LocalRepository;
+
 import java.util.Scanner;
 
 public class CommandLineInterface {
 
     private Scanner scanner = new Scanner(System.in);
     private String inputCommand;
+
+    private LocalRepository localRepository;
+
+    private CommandLine command = new CommandLine();
 
     public CommandLineInterface(){
         takeCommands();
@@ -20,7 +26,7 @@ public class CommandLineInterface {
             // if command is exit exit from the terminal otherwise call it again
             if (!this.inputCommand.equals("exit")){
                 // handle the command
-                new Command(this.inputCommand);
+                command.setCommand(this.inputCommand);
                 takeCommands();
             } else {
                 this.scanner.close();
