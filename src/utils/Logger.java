@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Logger {
-    private static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss.SSS";
     private String className;
 
     public Logger(Class<?> clazz) {
@@ -12,7 +11,7 @@ public class Logger {
     }
 
     private void log(String level, String message) {
-        String timestamp = new SimpleDateFormat(DATE_FORMAT).format(new Date());
+        String timestamp = new SimpleDateFormat(Timestamp.DATE_FORMAT).format(new Date());
         System.out.println(timestamp + " [" + level + "] " + this.className + ": " + message);
     }
 

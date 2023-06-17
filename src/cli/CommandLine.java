@@ -1,4 +1,4 @@
-package command_line_interface;
+package cli;
 
 import repository.LocalRepository;
 import utils.Logger;
@@ -60,9 +60,8 @@ public class CommandLine {
      */
     private void init(){
         // Check if the command is valid
-
         if(this.localRepository != null){
-            this.LOGGER.error("Already initialized repository");
+            this.LOGGER.error("Already is repository");
         } else {
             this.LOGGER.info("Initialized empty vcs repository");
             this.localRepository = new LocalRepository(this);
@@ -71,7 +70,7 @@ public class CommandLine {
 
     }
 
-    // Add commands to the commandMap
+    // Add commands to the commandMap when the local repository will be initialized
     private void addCommandsToCommandMap(){
         this.commandMap.put(Commands.ADD.getCommand(), this.localRepository::add);
         this.commandMap.put(Commands.COMMIT.getCommand(), this.localRepository::commit);

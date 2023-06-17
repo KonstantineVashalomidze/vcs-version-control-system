@@ -1,6 +1,6 @@
 package repository;
 
-import command_line_interface.CommandLine;
+import cli.CommandLine;
 import utils.Logger;
 
 public class LocalRepository implements Repository{

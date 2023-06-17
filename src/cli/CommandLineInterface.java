@@ -1,4 +1,4 @@
-package command_line_interface;
+package cli;
 
 import repository.LocalRepository;
 

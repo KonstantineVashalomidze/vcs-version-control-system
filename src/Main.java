@@ -1,4 +1,4 @@
-import command_line_interface.CommandLineInterface;
+import cli.CommandLineInterface;
 
 public class Main {
     public static void main(String[] args) {
