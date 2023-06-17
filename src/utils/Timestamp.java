@@ -42,6 +42,12 @@ public class Timestamp {
 
     @Override
     public boolean equals(Object obj){
+        if (obj == null) {
+            return false;
+        }
+        if (obj.getClass() != this.getClass()) {
+            return false;
+        }
         return Timestamp.compareTo(this, (Timestamp) obj) == 0;
     }
 
