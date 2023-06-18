@@ -9,17 +9,21 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class LocalFileSystem implements FileSystem{
-
     private Logger logger = new Logger(this.getClass());
 
+
+    public static void main(String[] args) {
+        LocalFileSystem filesys = new LocalFileSystem();
+        filesys.listFiles(filesys.getRootDirectory());
+    }
 
 
     @Override
     public boolean exists(Path path) {
-
         if (Files.exists(path)){
             this.logger.info("Specified file exists");
             return true;
@@ -105,7 +109,10 @@ public class LocalFileSystem implements FileSystem{
 
     @Override
     public List<Path> listFiles(Path directory) {
-        return null;
+
+
+
+        return new ArrayList<>();
     }
 
     @Override
@@ -133,16 +140,15 @@ public class LocalFileSystem implements FileSystem{
         return 0;
     }
 
-    @Override
-    public Path getCurrentDirectory() {
+    public Path getRootDirectory() {
         Path currentDirectory = Paths.get(System.getProperty("user.dir"));
-        this.logger.info("Current Directory: " + currentDirectory);
+        this.logger.info("Root Directory: " + currentDirectory);
         return currentDirectory;
     }
 
     @Override
     public boolean changeDirectory(Path directory) {
-
+        return false;
     }
 
     @Override

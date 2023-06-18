@@ -1,25 +1,30 @@
 package utils;
 
+import cli.SwingCLI;
+import com.sun.tools.javac.Main;
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Observable;
 
 public class Logger {
     private String className;
+
 
     public Logger(Class<?> clazz) {
         this.className = clazz.getSimpleName();
     }
 
-    private String log(String level, String message) {
+    private void log(String level, String message) {
         String timestamp = new SimpleDateFormat(Timestamp.DATE_FORMAT).format(new Date());
         String logOut = timestamp + " [" + level + "] " + this.className + ": " + message;
 
         // Prints log
         System.out.println(logOut);
-        return logOut;
+        SwingCLI.getSwingCLIWithIndex(0).setOutputTextArea(logOut);
     }
 
 

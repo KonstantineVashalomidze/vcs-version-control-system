@@ -125,13 +125,6 @@ public interface FileSystem {
     long size(Path path);
 
     /**
-     * Retrieves the current directory.
-     *
-     * @return The current directory as a {@link Path} object.
-     */
-    Path getCurrentDirectory();
-
-    /**
      * Changes the current directory to the specified directory.
      *
      * @param directory The directory to change to.

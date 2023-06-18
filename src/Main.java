@@ -1,7 +1,10 @@
-import cli.CommandLineInterface;
+import cli.SwingCLI;
 
 public class Main {
     public static void main(String[] args) {
-        new CommandLineInterface();
+
+        SwingCLI swingCLI = new SwingCLI();
+        swingCLI.addCLI(swingCLI);
+
     }
 }
