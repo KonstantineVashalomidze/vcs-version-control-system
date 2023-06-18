@@ -1,5 +1,8 @@
 package utils;
 
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -10,10 +13,16 @@ public class Logger {
         this.className = clazz.getSimpleName();
     }
 
-    private void log(String level, String message) {
+    private String log(String level, String message) {
         String timestamp = new SimpleDateFormat(Timestamp.DATE_FORMAT).format(new Date());
-        System.out.println(timestamp + " [" + level + "] " + this.className + ": " + message);
+        String logOut = timestamp + " [" + level + "] " + this.className + ": " + message;
+
+        // Prints log
+        System.out.println(logOut);
+        return logOut;
     }
+
+
 
     /**
      * Logs a trace-level message.

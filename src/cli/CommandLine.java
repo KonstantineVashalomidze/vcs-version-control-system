@@ -48,7 +48,7 @@ public class CommandLine {
                 this.LOGGER.warning("Unknown command: " + this.command);
             }
         } catch (Exception e){
-            this.LOGGER.error("Error: " + e.getMessage());
+            this.LOGGER.error(e.getMessage());
         }
     }
 
