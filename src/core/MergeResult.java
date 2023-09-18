@@ -1,4 +1,6 @@
 package core;
 
-public class MergeResult {
+public class MergeResult
+{
+
 }

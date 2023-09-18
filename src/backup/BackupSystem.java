@@ -1,4 +1,6 @@
 package backup;
 
-public interface BackupSystem {
+public interface BackupSystem
+{
+
 }

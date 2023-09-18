@@ -1,10 +1,15 @@
-import cli.SwingCLI;
+import cli.user_interface.VersionCLI;
+
+import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        SwingCLI swingCLI = new SwingCLI();
-        swingCLI.addCLI(swingCLI);
+        EventQueue.invokeLater(() ->
+        {
+            var frame = new VersionCLI();
+            frame.setVisible(true);
+        });
 
     }
 }

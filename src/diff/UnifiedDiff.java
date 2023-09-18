@@ -1,4 +1,6 @@
 package diff;
 
-public class UnifiedDiff {
+public class UnifiedDiff
+{
+
 }

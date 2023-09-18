@@ -1,14 +1,11 @@
 package utils;
 
-import cli.SwingCLI;
-import com.sun.tools.javac.Main;
+import cli.user_interface.VersionCLI;
+import cli.user_interface.comman_line_display.MainPanel;
 
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Observable;
+
 
 public class Logger {
     private String className;
@@ -24,7 +21,9 @@ public class Logger {
 
         // Prints log
         System.out.println(logOut);
-        SwingCLI.getSwingCLIWithIndex(0).setOutputTextArea(logOut);
+        var outputComponent = MainPanel.getOutputComponent();
+        outputComponent.setText(outputComponent.getText() + logOut + "\n");
+
     }
 
 
@@ -82,5 +81,9 @@ public class Logger {
     public void fatal(String message) {
         log("FATAL", message);
     }
+
+
+
+
 }
 

@@ -1,7 +1,13 @@
 package repository;
 
 
-public interface Repository {
+public interface Repository
+{
+
+    /**
+     * Initialise empty repository in current directory
+     */
+    void init();
 
     /**
      * This command adds one or more files to the repository's tracking list.
@@ -63,7 +69,7 @@ public interface Repository {
      */
     void push();
     /**
-     * These commands set the global user name and email address, which are used for commit author information.
+     * These commands set the global username and email address, which are used for commit author information.
      */
     void setGlobalConfig();
     /**

@@ -1,4 +1,6 @@
 package diff;
 
-public class SideBySideDiff {
+public class SideBySideDiff
+{
+
 }

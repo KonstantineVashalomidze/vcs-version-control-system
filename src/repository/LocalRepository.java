@@ -1,98 +1,110 @@
 package repository;
 
-import cli.CommandLine;
 import utils.Logger;
 
-public class LocalRepository implements Repository{
+import java.nio.file.Path;
+
+public class LocalRepository
+        implements Repository
+{
     private final Logger LOGGER = new Logger(this.getClass());
-    private final CommandLine commandLine;
+    // This variable is the path of where the LocalRepository is initialized
+    private Path directory;
 
-    private boolean isInitialized = false;
-
-
-    public LocalRepository(CommandLine commandLine){
-        this.commandLine = commandLine;
+    public LocalRepository(Path directory)
+    {
+        this.directory = directory;
     }
 
 
     @Override
-    public void add() {
-        // Files to add to the staging area
-        // Note that it the file names is starting from index 2;
-        String[] fileNamesToAddToTheStagingArea = this.commandLine.getCommand().split(" ");
-        this.LOGGER.info("Added files: ");
-        for (int i = 2; i < fileNamesToAddToTheStagingArea.length; i++) {
-            System.out.print(fileNamesToAddToTheStagingArea[i]);
-            if (i != fileNamesToAddToTheStagingArea.length - 1){
-                System.out.print(", ");
-            }
-        }
-        // Validates if the files exist to add to the staging area
-        // TODO
+    public void init()
+    {
+        LOGGER.info("created empty repository");
     }
 
     @Override
-    public void commit() {
+    public void add()
+    {
 
     }
 
     @Override
-    public void log() {
+    public void commit()
+    {
 
     }
 
     @Override
-    public void branch() {
+    public void log()
+    {
 
     }
 
     @Override
-    public void checkout() {
+    public void branch()
+    {
 
     }
 
     @Override
-    public void merge() {
+    public void checkout()
+    {
 
     }
 
     @Override
-    public void status() {
+    public void merge()
+    {
 
     }
 
     @Override
-    public void diff() {
+    public void status()
+    {
 
     }
 
     @Override
-    public void rm() {
+    public void diff()
+    {
 
     }
 
     @Override
-    public void cloneRepository() {
+    public void rm()
+    {
 
     }
 
     @Override
-    public void pull() {
+    public void cloneRepository()
+    {
 
     }
 
     @Override
-    public void push() {
+    public void pull()
+    {
 
     }
 
     @Override
-    public void setGlobalConfig() {
+    public void push()
+    {
 
     }
 
     @Override
-    public void help() {
+    public void setGlobalConfig()
+    {
 
     }
+
+    @Override
+    public void help()
+    {
+
+    }
+
 }

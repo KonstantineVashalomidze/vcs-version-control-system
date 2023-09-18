@@ -139,4 +139,10 @@ public interface FileSystem {
      */
     boolean navigateToParentDirectory();
 
+    /**
+     * Get current directory name.
+     * @return directory path as string.
+     */
+    String currentDirectoryName();
+
 }
