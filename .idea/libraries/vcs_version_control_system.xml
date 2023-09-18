@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="vcs-version-control-system">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/vcs_version_control_system_jar/vcs-version-control-system.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -64,12 +64,16 @@ public class LocalFileSystem
     }
 
     @Override
-    public boolean createFile(Path path) {
-        try{
+    public boolean createFile(Path path)
+    {
+        try
+        {
             Files.createFile(path);
             this.logger.info("Created file: " + path);
             return true;
-        } catch (Exception e){
+        }
+        catch (Exception e)
+        {
             this.logger.error(e.getMessage());
             return false;
         }

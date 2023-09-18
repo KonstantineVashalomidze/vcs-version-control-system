@@ -29,7 +29,7 @@ public class LocalRepository
         directory = Path.of(fileSystem.currentDirectoryName());
         // create .ozurgit folder
         fileSystem.createDirectory(Path.of(directory + ".ozurgit"));
-        fileSystem.createFile(Path.of("romani.html"));
+        fileSystem.createFile(Path.of("config.properties"));
     }
 
     @Override
