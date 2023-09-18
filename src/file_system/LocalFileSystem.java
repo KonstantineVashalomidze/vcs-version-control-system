@@ -78,11 +78,14 @@ public class LocalFileSystem
     @Override
     public boolean createDirectory(Path path) {
 
-        try{
+        try
+        {
             Files.createDirectory(path);
             this.logger.info("Created directory: " + path);
             return true;
-        } catch (Exception e){
+        }
+        catch (Exception e)
+        {
             this.logger.error(e.getMessage());
             return false;
         }

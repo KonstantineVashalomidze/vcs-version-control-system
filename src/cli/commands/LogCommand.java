@@ -3,20 +3,20 @@ package cli.commands;
 import cli.commands.command_pattern.Command;
 import repository.Repository;
 
-public class BranchCommand
+public class LogCommand
     implements Command
 {
     private Repository receiver;
 
-    public BranchCommand(Repository receiver, String[] arguments)
+    public LogCommand(Repository repository)
     {
-        this.receiver = receiver;
+        receiver = repository;
     }
 
     @Override
     public void execute()
     {
-        this.receiver.branch();
+        this.receiver.log();
     }
 
     @Override
@@ -40,4 +40,5 @@ public class BranchCommand
     public String getDescription() {
         return null;
     }
+
 }

@@ -3,20 +3,20 @@ package cli.commands;
 import cli.commands.command_pattern.Command;
 import repository.Repository;
 
-public class BranchCommand
+public class HelpCommand
     implements Command
 {
     private Repository receiver;
 
-    public BranchCommand(Repository receiver, String[] arguments)
+    public HelpCommand(Repository repository, String[] copyOfRange)
     {
-        this.receiver = receiver;
+        receiver = repository;
     }
 
     @Override
     public void execute()
     {
-        this.receiver.branch();
+        receiver.help();
     }
 
     @Override
@@ -32,12 +32,14 @@ public class BranchCommand
     }
 
     @Override
-    public boolean canExecute() {
-        return true;
+    public boolean canExecute()
+    {
+        return false;
     }
 
     @Override
-    public String getDescription() {
+    public String getDescription()
+    {
         return null;
     }
 }

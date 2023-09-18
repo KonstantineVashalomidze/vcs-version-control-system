@@ -3,20 +3,21 @@ package cli.commands;
 import cli.commands.command_pattern.Command;
 import repository.Repository;
 
-public class BranchCommand
+public class StatusCommand
     implements Command
 {
+
     private Repository receiver;
 
-    public BranchCommand(Repository receiver, String[] arguments)
+    public StatusCommand(Repository repository)
     {
-        this.receiver = receiver;
+        receiver = repository;
     }
 
     @Override
     public void execute()
     {
-        this.receiver.branch();
+        this.receiver.status();
     }
 
     @Override
@@ -40,4 +41,5 @@ public class BranchCommand
     public String getDescription() {
         return null;
     }
+
 }

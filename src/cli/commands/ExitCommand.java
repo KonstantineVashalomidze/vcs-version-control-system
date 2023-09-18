@@ -1,4 +1,6 @@
 package cli.commands;
 
-public class ExitCommand {
+public class ExitCommand
+{
+
 }

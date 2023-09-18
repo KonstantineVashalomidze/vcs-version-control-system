@@ -33,7 +33,7 @@ public class VersionCLI
     public VersionCLI(){
         // make mainPanel scrollable
         mainPanel = new MainPanel();
-        // Add JScroll Pane to the window
+        // AddCommand JScroll Pane to the window
         add(mainPanel);
 
         // set current directory name

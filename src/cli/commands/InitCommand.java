@@ -3,12 +3,14 @@ package cli.commands;
 import cli.commands.command_pattern.Command;
 import repository.Repository;
 
-public class InitCommand implements Command {
+public class InitCommand
+        implements Command
+{
     private Repository receiver;
 
-    public InitCommand(Repository receiver)
+    public InitCommand(Repository repository)
     {
-        this.receiver = receiver;
+        receiver = repository;
     }
 
     @Override
@@ -31,7 +33,7 @@ public class InitCommand implements Command {
 
     @Override
     public boolean canExecute() {
-        return false;
+        return true;
     }
 
     @Override

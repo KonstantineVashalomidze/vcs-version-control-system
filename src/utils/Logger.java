@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class Logger {
     private String className;
-
+    private boolean showDate;
 
     public Logger(Class<?> clazz) {
         this.className = clazz.getSimpleName();
@@ -17,16 +17,18 @@ public class Logger {
 
     private void log(String level, String message) {
         String timestamp = new SimpleDateFormat(Timestamp.DATE_FORMAT).format(new Date());
-        String logOut = timestamp + " [" + level + "] " + this.className + ": " + message;
+        String logOut = (showDate ? timestamp : "") + " [" + level + "] " + this.className + ": " + message;
 
-        // Prints log
-        System.out.println(logOut);
+        // Prints log in console
         var outputComponent = MainPanel.getOutputComponent();
         outputComponent.setText(outputComponent.getText() + logOut + "\n");
 
     }
 
-
+    public void setShowDate(boolean showDate)
+    {
+        this.showDate = showDate;
+    }
 
     /**
      * Logs a trace-level message.

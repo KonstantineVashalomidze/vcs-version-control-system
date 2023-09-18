@@ -3,20 +3,21 @@ package cli.commands;
 import cli.commands.command_pattern.Command;
 import repository.Repository;
 
-public class BranchCommand
+public class RemoveCommand
     implements Command
 {
     private Repository receiver;
 
-    public BranchCommand(Repository receiver, String[] arguments)
+    public RemoveCommand(Repository repository, String[] arguments)
     {
-        this.receiver = receiver;
+        receiver = repository;
     }
 
     @Override
     public void execute()
     {
-        this.receiver.branch();
+        // TODO: i need the implementation of the remove button
+        System.out.println("REMOVE NOT WORKING");
     }
 
     @Override
@@ -40,4 +41,5 @@ public class BranchCommand
     public String getDescription() {
         return null;
     }
+
 }

@@ -3,12 +3,13 @@ package cli.commands;
 import cli.commands.command_pattern.Command;
 import repository.Repository;
 
-public class BranchCommand
+public class CheckoutCommand
     implements Command
 {
+
     private Repository receiver;
 
-    public BranchCommand(Repository receiver, String[] arguments)
+    public CheckoutCommand(Repository receiver, String[] arguments)
     {
         this.receiver = receiver;
     }
@@ -16,7 +17,7 @@ public class BranchCommand
     @Override
     public void execute()
     {
-        this.receiver.branch();
+        this.receiver.checkout();
     }
 
     @Override
@@ -40,4 +41,5 @@ public class BranchCommand
     public String getDescription() {
         return null;
     }
+
 }

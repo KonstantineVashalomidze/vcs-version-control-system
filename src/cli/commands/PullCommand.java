@@ -3,20 +3,20 @@ package cli.commands;
 import cli.commands.command_pattern.Command;
 import repository.Repository;
 
-public class BranchCommand
+public class PullCommand
     implements Command
 {
     private Repository receiver;
 
-    public BranchCommand(Repository receiver, String[] arguments)
+    public PullCommand(Repository repository)
     {
-        this.receiver = receiver;
+        receiver = repository;
     }
 
     @Override
     public void execute()
     {
-        this.receiver.branch();
+        this.receiver.pull();
     }
 
     @Override

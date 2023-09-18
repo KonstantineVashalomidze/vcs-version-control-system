@@ -3,20 +3,20 @@ package cli.commands;
 import cli.commands.command_pattern.Command;
 import repository.Repository;
 
-public class BranchCommand
+public class CloneCommand
     implements Command
 {
     private Repository receiver;
 
-    public BranchCommand(Repository receiver, String[] arguments)
+    public CloneCommand(Repository repository, String[] arguments)
     {
-        this.receiver = receiver;
+        receiver = repository;
     }
 
     @Override
     public void execute()
     {
-        this.receiver.branch();
+        this.receiver.cloneRepository();
     }
 
     @Override
